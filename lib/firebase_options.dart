@@ -53,7 +53,7 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyDb7oTBkACI82ZEnlkTj7XdCKY70fKhyTs',
+    apiKey: String.fromEnvironment('firebase_api_key', defaultValue: ''),
     appId: '1:353293344193:web:d2ca7eb54705e13a5ce340',
     messagingSenderId: '353293344193',
     projectId: 'myeoru-blog',
