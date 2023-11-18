@@ -10,10 +10,14 @@ jobs:
   build_and_deploy:
     runs-on: ubuntu-latest
     steps:
+      - name: Set Environment
+        env:
+          FIREBASE_API_KEY: ${{ secrets.$FIREBASE_API_KEY }}
+          RECAPTCHA_SITE_KEY: ${{ secrets.$RECAPTCHA_SITE_KEY }}
       - uses: actions/checkout@v3
       - uses: subosito/flutter-action@v2.8.0
       - run: flutter pub get
-      - run: flutter build web --release
+      - run: flutter build web --release --dart-define=firebase_api_key=$FIREBASE_API_KEY --dart-define=re_captcha_site_key=$RECAPTCHA_SITE_KEY
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: '${{ secrets.FIREBASE_HOSTING_GITHUB_TOKEN }}'
