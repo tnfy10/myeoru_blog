@@ -13,7 +13,7 @@ jobs:
       - uses: actions/checkout@v3
       - uses: subosito/flutter-action@v2.8.0
       - run: flutter pub get
-      - run: flutter build web -t lib/core/main.dart --flavor production --release --dart-define=firebase_api_key=${{ secrets.$FIREBASE_API_KEY }} --dart-define=re_captcha_site_key=${{ secrets.$RECAPTCHA_SITE_KEY }}
+      - run: flutter build web -t lib/core/main.dart --flavor production --release --dart-define=firebase_api_key=${{ secrets.FIREBASE_API_KEY }} --dart-define=re_captcha_site_key=${{ secrets.RECAPTCHA_SITE_KEY }}
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT }}'
