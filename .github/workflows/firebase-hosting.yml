@@ -15,8 +15,8 @@ jobs:
           echo "FIREBASE_API_KEY=$FIREBASE_API_KEY" >> .env
           echo "RECAPTCHA_SITE_KEY=$RECAPTCHA_SITE_KEY" >> .env
         env:
-          FIREBASE_API_KEY: ${{ secrets.$FIREBASE_API_KEY }}
-          RECAPTCHA_SITE_KEY: ${{ secrets.$RECAPTCHA_SITE_KEY }}
+          FIREBASE_API_KEY: ${{ secrets.FIREBASE_API_KEY }}
+          RECAPTCHA_SITE_KEY: ${{ secrets.RECAPTCHA_SITE_KEY }}
       - uses: actions/checkout@v3
       - uses: subosito/flutter-action@v2.8.0
       - run: flutter pub get
