@@ -1,10 +1,9 @@
 import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:myeoru_blog/ui/error/not_found_screen.dart';
+import 'package:myeoru_blog/presentation/error/not_found_screen.dart';
+import 'package:myeoru_blog/presentation/home/screen/home_screen.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
-
-import '../../ui/main/screen/main_screen.dart';
 
 part 'router_notifier.g.dart';
 
@@ -15,8 +14,8 @@ class GoRouterNotifier extends _$GoRouterNotifier {
   late List<GoRoute> routes = [
     GoRoute(
       path: '/',
-      name: MainScreen.routeName,
-      builder: (_, __) => const MainScreen(),
+      name: HomeScreen.routeName,
+      builder: (_, __) => const HomeScreen(),
     ),
   ];
 

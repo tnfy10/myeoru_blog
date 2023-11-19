@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:myeoru_blog/ui/main/screen/main_screen.dart';
+import 'package:myeoru_blog/presentation/home/screen/home_screen.dart';
 
 class NotFoundScreen extends StatelessWidget {
   const NotFoundScreen({super.key});
@@ -24,7 +24,7 @@ class NotFoundScreen extends StatelessWidget {
                 if (context.canPop()) {
                   context.pop();
                 } else {
-                  context.goNamed(MainScreen.routeName);
+                  context.goNamed(HomeScreen.routeName);
                 }
               },
               child: const Text('이전 페이지로 돌아가기'),

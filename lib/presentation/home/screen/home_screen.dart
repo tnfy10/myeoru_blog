@@ -2,18 +2,18 @@ import 'package:collection/collection.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
-import 'package:myeoru_blog/ui/main/notifier/main_drawer_notifier.dart';
+import 'package:myeoru_blog/presentation/home/notifier/main_drawer_notifier.dart';
 
-class MainScreen extends ConsumerStatefulWidget {
+class HomeScreen extends ConsumerStatefulWidget {
   static String get routeName => 'main';
 
-  const MainScreen({super.key});
+  const HomeScreen({super.key});
 
   @override
-  ConsumerState<MainScreen> createState() => _MainScreenState();
+  ConsumerState<HomeScreen> createState() => _MainScreenState();
 }
 
-class _MainScreenState extends ConsumerState<MainScreen> {
+class _MainScreenState extends ConsumerState<HomeScreen> {
   int selectedDrawerMenuIdx = 0;
 
   changeSelectedDrawerMenuIdx(int index) {
