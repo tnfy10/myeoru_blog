@@ -2,7 +2,7 @@ import 'package:collection/collection.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
-import 'package:myeoru_blog/presentation/home/notifier/main_drawer_notifier.dart';
+import 'package:myeoru_blog/presentation/home/notifier/home_drawer_notifier.dart';
 
 class HomeScreen extends ConsumerStatefulWidget {
   static String get routeName => 'main';
@@ -35,7 +35,7 @@ class _MainScreenState extends ConsumerState<HomeScreen> {
   }
 
   Widget drawerMenu() {
-    final drawerListState = ref.watch(mainDrawerNotifierProvider);
+    final drawerListState = ref.watch(homeDrawerNotifierProvider);
 
     if (drawerListState.isLoading) {
       return Container(
