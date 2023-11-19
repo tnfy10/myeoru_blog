@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:myeoru_blog/core/route/router_notifier.dart';
+import 'package:myeoru_blog/core/notifier/router_notifier.dart';
 
 class App extends ConsumerWidget {
   const App({super.key});
@@ -15,6 +15,7 @@ class App extends ConsumerWidget {
       routerDelegate: router.routerDelegate,
       title: 'Myeoru Blog',
       theme: ThemeData(primarySwatch: Colors.blue),
+      darkTheme: ThemeData.dark(),
     );
   }
 }

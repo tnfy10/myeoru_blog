@@ -2,7 +2,7 @@ import 'package:logger/logger.dart';
 
 final logger = Logger(
   filter: ProductionFilter(),
-  printer: PrefixPrinter(PrettyPrinter(
+  printer: PrefixPrinter(SimplePrinter(
     colors: true,
     printTime: true,
   )),
