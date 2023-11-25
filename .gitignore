@@ -45,3 +45,4 @@ app.*.map.json
 
 # generate file
 *.g.dart
+*.freezed.dart
