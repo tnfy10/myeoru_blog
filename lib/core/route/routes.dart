@@ -1,5 +1,5 @@
 import 'package:go_router/go_router.dart';
-import 'package:myeoru_blog/feature/auth/screen/sign_in_screen.dart';
+import 'package:myeoru_blog/feature/auth/sign_in_screen.dart';
 import 'package:myeoru_blog/feature/home/screen/home_screen.dart';
 
 final List<GoRoute> routes = [
