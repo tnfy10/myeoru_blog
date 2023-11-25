@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:myeoru_blog/core/notifier/auth_notifier.dart';
-import 'package:myeoru_blog/presentation/home/component/home_drawer.dart';
-import 'package:myeoru_blog/presentation/home/notifier/home_drawer_notifier.dart';
+import 'package:myeoru_blog/core/auth/auth_notifier.dart';
+import 'package:myeoru_blog/feature/home/component/home_drawer.dart';
+import 'package:myeoru_blog/feature/home/notifier/home_drawer_notifier.dart';
 
 class HomeScreen extends ConsumerStatefulWidget {
   static String get routeName => 'home';

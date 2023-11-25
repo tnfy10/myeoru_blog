@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:myeoru_blog/core/const/env_key.dart';
 import 'package:myeoru_blog/core/firebase/options/prod_firebase_options.dart';
-import 'package:myeoru_blog/presentation/app.dart';
+import 'package:myeoru_blog/app/app.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();

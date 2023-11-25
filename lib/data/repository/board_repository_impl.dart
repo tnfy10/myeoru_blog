@@ -1,24 +1,34 @@
-import 'package:myeoru_blog/core/utils/logger.dart';
-import 'package:myeoru_blog/data/datasource/board_category/board_category_remote_data_source.dart';
-import 'package:myeoru_blog/data/mapper/board_category_mapper.dart';
-import 'package:myeoru_blog/domain/model/board_category.dart';
-import 'package:myeoru_blog/domain/repository/board_repository.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:myeoru_blog/data/model/board_category.dart';
+import 'package:myeoru_blog/data/repository/board_repository.dart';
 
 class BoardRepositoryImpl implements BoardRepository {
-  final BoardCategoryRemoteDataSource boardCategoryRemoteDataSource;
+  final CollectionReference<BoardCategory> boardCategoryCollection;
 
   BoardRepositoryImpl({
-    required this.boardCategoryRemoteDataSource,
+    required this.boardCategoryCollection,
   });
 
   @override
   Future<List<BoardCategory>> getBoardCategoryList() async {
-    try {
-      final data = await boardCategoryRemoteDataSource.getBoardCategoryList();
-      return mapperToBoardCategoryList(data);
-    } catch (e, stack) {
-      logger.e(e.toString(), stackTrace: stack);
-      rethrow;
+    final docSnap = await boardCategoryCollection.get();
+    return docSnap.docs.map((e) => e.data()).toList();
+  }
+
+  @override
+  Future<void> addBoardCategory(BoardCategory boardCategory) async {
+    final snapshot =
+        await boardCategoryCollection.where('label', isEqualTo: boardCategory.label).get();
+
+    if (snapshot.docs.isNotEmpty) {
+      throw Exception('이미 존재하는 카테고리 입니다.');
     }
+
+    await boardCategoryCollection.add(boardCategory);
+  }
+
+  @override
+  Future<void> deleteBoardCategory(String id) async {
+    await boardCategoryCollection.doc(id).delete();
   }
 }

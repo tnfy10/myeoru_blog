@@ -3,11 +3,9 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
-import 'package:myeoru_blog/core/notifier/auth_notifier.dart';
-import 'package:myeoru_blog/core/route/route_extension.dart';
-import 'package:myeoru_blog/domain/model/board_category.dart';
-import 'package:myeoru_blog/presentation/auth/screen/sign_in_screen.dart';
-import 'package:myeoru_blog/presentation/home/screen/home_screen.dart';
+import 'package:myeoru_blog/core/auth/auth_notifier.dart';
+import 'package:myeoru_blog/core/route/navigation.dart';
+import 'package:myeoru_blog/data/model/board_category.dart';
 
 class HomeDrawer extends ConsumerWidget {
   final int selectedIndex;
@@ -99,7 +97,7 @@ class HomeDrawer extends ConsumerWidget {
 
     return drawerList
         .mapIndexed((index, e) => ListTile(
-              title: Text(e.label),
+              title: Text(e.label.toString()),
               selected: selectedIndex == index,
               onTap: () {
                 onChangedSelectedIndex(index);

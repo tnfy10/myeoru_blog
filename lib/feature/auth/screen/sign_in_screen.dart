@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
-import 'package:myeoru_blog/core/notifier/auth_notifier.dart';
-import 'package:myeoru_blog/presentation/home/screen/home_screen.dart';
+import 'package:myeoru_blog/core/auth/auth_notifier.dart';
+import 'package:myeoru_blog/feature/home/screen/home_screen.dart';
 
 class SignInScreen extends ConsumerWidget {
   static String get routeName => 'signIn';

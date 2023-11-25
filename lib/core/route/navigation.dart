@@ -1,9 +1,9 @@
 import 'package:flutter/widgets.dart';
 import 'package:go_router/go_router.dart';
 import 'package:myeoru_blog/core/utils/logger.dart';
-import 'package:myeoru_blog/presentation/auth/screen/sign_in_screen.dart';
+import 'package:myeoru_blog/feature/auth/screen/sign_in_screen.dart';
 
-extension RouterExtension on BuildContext {
+extension Navigation on BuildContext {
   void navigateSignIn() {
     final GoRouterState state = GoRouterState.of(this);
     final query = state.uri.query;

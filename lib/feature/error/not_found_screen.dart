@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:myeoru_blog/presentation/home/screen/home_screen.dart';
+import 'package:myeoru_blog/feature/home/screen/home_screen.dart';
 
 class NotFoundScreen extends StatelessWidget {
   const NotFoundScreen({super.key});
